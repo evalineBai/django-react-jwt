@@ -9,7 +9,7 @@ from .serializers import UserSerializer, UserSerializerWithToken
 @api_view(['GET'])
 def current_user(request):
     """
-    Determine the current user by their token, and return their data
+    This function-based view will determine the current user by their token, and return their data. Will be used anytime the user causes React to forget its state.
     """
     serializer = UserSerializer(request.user)
     return Response(serializer.data)
